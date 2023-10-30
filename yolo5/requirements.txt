@@ -1,0 +1,16 @@
+flask
+
+telebot
+botocore
+loguru
+
+boto3
+
+uuid
+pyyaml
+pymongo
+
+# testing
+
+pylint
+pytest
