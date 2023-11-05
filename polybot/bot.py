@@ -4,7 +4,7 @@ import os
 import time
 from telebot.types import InputFile
 import requests
-
+import boto3
 
 class Bot:
 
@@ -64,7 +64,7 @@ class Bot:
     def handle_message(self, msg):
         """Bot Main message handler"""
         logger.info(f'Incoming message: {msg}')
-        self.send_text(msg['chat']['id'], f'Your original message: {msg["text"]}')
+        self.send_text(msg['chat']['id'], f'Your original message from Mohammad: {msg["text"]}')
 
 
 class QuoteBot(Bot):
@@ -78,8 +78,14 @@ class QuoteBot(Bot):
 class ObjectDetectionBot(Bot):
 
     def __init__(self, token, telegram_chat_url, S3_BUCKET_URL):
+        # s3_access_key , s3_secret_key
         super().__init__(token, telegram_chat_url)
         self.S3_BUCKET_URL = S3_BUCKET_URL
+        """
+        self.S3_ACCESS_KEY = s3_access_key
+        self.S3_SECRET_KEY = s3_secret_key
+        self.s3_client = boto3.client('s3', aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_key)
+        """
     def handle_message(self, msg):
         logger.info(f'Incoming message: {msg}')
 
@@ -103,8 +109,15 @@ class ObjectDetectionBot(Bot):
     def upload_to_s3(self, img_path):
         # Assuming you have AWS credentials configured in the environment or using a secure method
         # Upload logic here, using boto3 or a suitable library
-        pass
-
+        """
+        try:
+            # to be updated
+            self.s3_client.upload_file(str(predicted_img_path), images_bucket, s3_prediction_img_path)
+        except Exception as e:
+            logger.error(e)
+            raise
+            return
+        """
     def request_yolo_prediction(self, s3_url):
         # Assuming you have an endpoint where YOLO5 service is running
         yolo_endpoint = 'http://yolo5-service-endpoint/predict'

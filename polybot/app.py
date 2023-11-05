@@ -12,7 +12,10 @@ app = flask.Flask(__name__)
 TELEGRAM_TOKEN = os.environ['TELEGRAM_TOKEN']
 TELEGRAM_APP_URL = os.environ['TELEGRAM_APP_URL']
 S3_BUCKET_URL = os.environ.get('S3_BUCKET_URL')
-
+"""
+s3_access_key = os.environ['S3_ACCESS_KEY']
+s3_secret_key = os.environ['S3_SECRET_KEY']
+"""
 
 @app.route('/', methods=['GET'])
 def index():
@@ -27,7 +30,10 @@ def webhook():
 
 
 if __name__ == "__main__":
-    bot = ObjectDetectionBot(TELEGRAM_TOKEN, TELEGRAM_APP_URL, S3_BUCKET_URL)
+
+    # bot = ObjectDetectionBot(TELEGRAM_TOKEN, TELEGRAM_APP_URL, S3_BUCKET_URL)
+    bot = Bot(TELEGRAM_TOKEN, TELEGRAM_APP_URL)
+    print ("App is running")
 
     app.run(host='0.0.0.0', port=8443)
     # test
