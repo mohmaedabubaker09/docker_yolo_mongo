@@ -1,21 +1,13 @@
 import flask
 from flask import request
 import os
-from bot import ObjectDetectionBot, Bot
-# Botimport sys
-# sys.path.append("../../../../py")
-# from constants import TELEGRAM_TOKEN, TELEGRAM_APP_URL
-# sys.path.append("../PycharmProjects/Docker_Project/docker_yolo_mongo/polybot")
-# print(sys.path)
+from bot import ObjectDetectionBot, Bot, QuoteBot
+
 app = flask.Flask(__name__)
 
 TELEGRAM_TOKEN = os.environ['TELEGRAM_TOKEN']
 TELEGRAM_APP_URL = os.environ['TELEGRAM_APP_URL']
-S3_BUCKET_URL = os.environ.get('S3_BUCKET_URL')
-"""
-s3_access_key = os.environ['S3_ACCESS_KEY']
-s3_secret_key = os.environ['S3_SECRET_KEY']
-"""
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -30,10 +22,6 @@ def webhook():
 
 
 if __name__ == "__main__":
-
-    # bot = ObjectDetectionBot(TELEGRAM_TOKEN, TELEGRAM_APP_URL, S3_BUCKET_URL)
-    bot = Bot(TELEGRAM_TOKEN, TELEGRAM_APP_URL)
-    print ("App is running")
+    bot = QuoteBot(TELEGRAM_TOKEN, TELEGRAM_APP_URL)
 
     app.run(host='0.0.0.0', port=8443)
-    # test
