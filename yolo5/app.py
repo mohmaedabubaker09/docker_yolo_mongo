@@ -13,13 +13,13 @@ from pymongo import MongoClient
 
 # Set Up Environment Variables :-
 images_bucket = os.environ['BUCKET_NAME']
+s3_access_key = os.environ['S3_ACCESS_KEY']
+s3_secret_key = os.environ['S3_SECRET_KEY']
 
 # mongodb_uri = 'mongodb://localhost:27017,localhost:27018,localhost:27019/' # os.environ['MONGODB_URI']
 mongodb_uri = 'mongodb://mongo1:27017,mongo2:27018,mongo3:27019/'
 
 # intialize S3 client
-s3_access_key = os.environ['S3_ACCESS_KEY']
-s3_secret_key = os.environ['S3_SECRET_KEY']
 s3_client = boto3.client('s3', aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_key)
 
 # Load Configuration from a YAML File :-
