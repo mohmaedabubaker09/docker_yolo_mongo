@@ -4,6 +4,7 @@ import os
 import time
 from telebot.types import InputFile
 import boto3
+import requests
 
 class Bot:
 
@@ -42,6 +43,7 @@ class Bot:
         file_info = self.telegram_bot_client.get_file(msg['photo'][-1]['file_id'])
         data = self.telegram_bot_client.download_file(file_info.file_path)
         folder_name = file_info.file_path.split('/')[0]
+        # folder_name = ""
 
         if not os.path.exists(folder_name):
             os.makedirs(folder_name)
@@ -86,15 +88,12 @@ class ObjectDetectionBot(Bot):
 
     def __init__(self, token, telegram_chat_url):
         Bot.__init__(self, token, telegram_chat_url)
-        self.childNumber = 4
-        # self.S3_BUCKET_URL = os.environ.get('S3_BUCKET_URL')
-        # self.s3_access_key = os.environ['S3_ACCESS_KEY']
-        # self.s3_secret_key = os.environ['S3_SECRET_KEY']
         self.Bucket_Name = os.environ['BUCKET_NAME']
+        self.aws_region = os.environ['REGION']
         # self.s3_client = boto3.client('s3', aws_access_key_id=self.s3_access_key, aws_secret_access_key=self.s3_secret_key)
         self.s3_resource = boto3.resource(
             's3',
-            region_name=os.environ['REGION'],
+            region_name=self.aws_region,
             aws_access_key_id=os.environ['S3_ACCESS_KEY'],
             aws_secret_access_key=os.environ['S3_SECRET_KEY']
         )
@@ -102,22 +101,22 @@ class ObjectDetectionBot(Bot):
         logger.info(f'Incoming message: {msg}')
 
         if self.is_current_msg_photo(msg):
-
             try:
                 # Download the user photo
                 img_path = self.download_user_photo(msg)
+                # img_path = f"{img_path}.jpeg"
 
                 # Upload the photo to S3
                 s3_url = self.upload_to_s3(img_path)
 
+                # Send a request to the `yolo5` service for prediction
+                yolo_prediction = self.request_yolo_prediction(s3_url)
+
+                # Send results to the Telegram end-user
+                self.send_text(msg['chat']['id'], f'YOLO Prediction: {yolo_prediction}')
+
             except Exception as e:
                 logger.error(f'Error processing message: {e}')
-
-                # # Send a request to the `yolo5` service for prediction
-                # yolo_prediction = self.request_yolo_prediction(s3_url)
-                #
-                # # Send results to the Telegram end-user
-                # self.send_text(msg['chat']['id'], f'YOLO Prediction: {yolo_prediction}')
 
     def upload_to_s3(self, img_path):
         # Assuming you have AWS credentials configured in the environment or using a secure method
@@ -125,23 +124,24 @@ class ObjectDetectionBot(Bot):
 
         try:
             self.s3_resource.Bucket(self.Bucket_Name).put_object(
-                Key=img_path,
+                Key=os.path.basename(img_path),
                 Body=open(img_path, 'rb')
             )
-            # to be updated
+
             # self.s3_client.upload_file(str(img_path), self.Bucket_Name)
         except Exception as e:
             logger.error(e)
-            logger.error(img_path)
-            logger.error(self.Bucket_Name)
+            logger.error("image path ==", img_path)
+            logger.error("Bucket name ==", self.Bucket_Name)
             raise
             return
-
+        #return f"https://{self.Bucket_Name}.s3.{self.aws_region}.amazonaws.com/{img_path}"
+        return os.path.basename(img_path)
 
     def request_yolo_prediction(self, s3_url):
         # Assuming you have an endpoint where YOLO5 service is running
-        # !!! yolo endpoint to be updated !!
-        yolo_endpoint = 'http://yolo5-service-endpoint/predict'
+
+        yolo_endpoint = 'http://yolo:8081/predict'
         response = requests.post(yolo_endpoint, params={'imgName': s3_url})
 
         if response.status_code == 200:
