@@ -126,13 +126,14 @@ def predict():
         result = collection.insert_one(prediction_summary)  # Get the result of the insert operation
         prediction_summary["_id"] = str(result.inserted_id)  # Convert the ObjectId to a string
 
-
-
         mongo_client.close()
         #  Return the Prediction Summary as a Response :-
         return prediction_summary
     else:
-        return f'prediction: {prediction_id}/{original_img_path}. prediction result not found', 404
+        # return f'prediction: {prediction_id}/{original_img_path}. prediction result not found', 404
+        return [{
+                'class': "", 'cx': 0, 'cy': 0, 'width': 0, 'height': 0
+            }]
 
 # Start the Flask Application :-
 if __name__ == "__main__":
