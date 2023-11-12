@@ -5,6 +5,8 @@ import time
 from telebot.types import InputFile
 import boto3
 import requests
+import json
+import botocore
 
 class Bot:
 
@@ -92,51 +94,97 @@ class ObjectDetectionBot(Bot):
         self.aws_region = os.environ['REGION']
         # self.s3_client = boto3.client('s3', aws_access_key_id=self.s3_access_key, aws_secret_access_key=self.s3_secret_key)
         self.s3_resource = boto3.resource(
-            's3',
+           's3',
             region_name=self.aws_region,
             aws_access_key_id=os.environ['S3_ACCESS_KEY'],
             aws_secret_access_key=os.environ['S3_SECRET_KEY']
         )
+
     def handle_message(self, msg):
         logger.info(f'Incoming message: {msg}')
 
         if self.is_current_msg_photo(msg):
             try:
-                # Download the user photo
+                self.send_text(msg['chat']['id'], "Photo received! 🌟 We're swiftly scanning it... Stay tuned for the magic! ✨")
+
+                # Download the photo from telegram bot chat
                 img_path = self.download_user_photo(msg)
-                # img_path = f"{img_path}.jpeg"
 
                 # Upload the photo to S3
-                s3_url = self.upload_to_s3(img_path)
+                s3_url = self.upload_image_to_s3(img_path)
 
-                # Send a request to the `yolo5` service for prediction
-                yolo_prediction = self.request_yolo_prediction(s3_url)
+                # Send a request to yolo5 service for prediction
+                yolo_results = self.request_yolo_prediction(s3_url)
 
-                # Send results to the Telegram end-user
-                self.send_text(msg['chat']['id'], f'YOLO Prediction: {yolo_prediction}')
+                 # Extract the 'labels' list which contains the detections
+                detections = yolo_results['labels']
 
+                # Create a dictionary to count occurrences of each class
+                detection_counts = {}
+
+                # Collect data for each detected object
+                for item in detections:
+                    class_name = item['class']
+                    # Initialize the count for this class if not already done
+                    if class_name not in detection_counts:
+                        detection_counts[class_name] = 0
+
+                    # Increment the count for the class
+                    detection_counts[class_name] += 1
+
+                # Now create a sentence for each class
+                detection_descriptions = []
+                for class_name, count in detection_counts.items():
+                    if count == 1:
+                        description = f"One {class_name} was detected.\n"
+                    else:
+                        description = f"{count} {class_name}s were detected.\n"
+
+                    detection_descriptions.append(description)
+
+                # Combine sentences into a summary paragraph
+                summary = ''.join(detection_descriptions)
+
+                # Send results to the telegram user
+                self.send_text(msg['chat']['id'], f"We've scanned your image and here's what we found:\n{summary}")
+                self.send_text(msg['chat']['id'],"One more surprise 🌟 Please wait ...")
+                file_name = os.path.basename(img_path)
+                new_filename = self.download_predicted_image_from_s3(file_name)
+                self.send_photo(msg['chat']['id'], new_filename)
+
+                # self.send_photo(msg['chat']['id'], new_filename)
             except Exception as e:
                 logger.error(f'Error processing message: {e}')
 
-    def upload_to_s3(self, img_path):
-        # Assuming you have AWS credentials configured in the environment or using a secure method
-        # Upload logic here, using boto3 or a suitable library
-
+    def upload_image_to_s3(self, img_path):
         try:
             self.s3_resource.Bucket(self.Bucket_Name).put_object(
                 Key=os.path.basename(img_path),
                 Body=open(img_path, 'rb')
             )
-
-            # self.s3_client.upload_file(str(img_path), self.Bucket_Name)
         except Exception as e:
             logger.error(e)
-            logger.error("image path ==", img_path)
-            logger.error("Bucket name ==", self.Bucket_Name)
             raise
             return
         #return f"https://{self.Bucket_Name}.s3.{self.aws_region}.amazonaws.com/{img_path}"
         return os.path.basename(img_path)
+
+    def download_predicted_image_from_s3(self, file_name):
+        s3_file_name = file_name.split('.')[0] + '_prediction.jpg'
+        print (s3_file_name)
+        try:
+            self.s3_resource.Bucket(self.Bucket_Name).download_file(
+                s3_file_name,
+                s3_file_name
+            )
+
+        except botocore.exceptions.ClientError as e:
+            if e.response['Error']['Code'] == "404":
+                logger.error(f"The object does not exist.{e}")
+            else:
+                raise
+                return
+        return s3_file_name
 
     def request_yolo_prediction(self, s3_url):
         # Assuming you have an endpoint where YOLO5 service is running
@@ -148,4 +196,3 @@ class ObjectDetectionBot(Bot):
             return response.json()
         else:
             response.raise_for_status()
-

@@ -79,7 +79,8 @@ def predict():
 
     # Uplode Predicted image to S3 :-
     # TODO Uploads the predicted image (predicted_img_path) to S3 (be careful not to override the original image).
-    s3_prediction_img_path = f'predictions/{img_name.split(".")[0]}_prediction.jpg'
+    # s3_prediction_img_path = f'predictions/{img_name.split(".")[0]}_prediction.jpg'
+    s3_prediction_img_path = f'{img_name.split(".")[0]}_prediction.jpg'
     try:
         s3_client.upload_file(str(predicted_img_path), images_bucket, s3_prediction_img_path)
     except Exception as e:
