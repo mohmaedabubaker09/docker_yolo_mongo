@@ -116,9 +116,10 @@ class ObjectDetectionBot(Bot):
                 # Send a request to yolo5 service for prediction
                 yolo_results = self.request_yolo_prediction(s3_url)
 
-                if yolo_results[0] == {'class': "", 'cx': 0, 'cy': 0, 'width': 0, 'height': 0}:
-                    self.send_text(msg['chat']['id'], "Oops, your image has left me scratching my circuits! I must've missed a few updates. 😅 Could you send a different image, so I can try again?")
-                    return
+                if len(yolo_results) == 1:
+                    if yolo_results[0] == {'class': "", 'cx': 0, 'cy': 0, 'width': 0, 'height': 0}:
+                        self.send_text(msg['chat']['id'], "Oops, your image has left me scratching my circuits! I must've missed a few updates. 😅 Could you send a different image, so I can try again?")
+                        return
 
                  # Extract the 'labels' list which contains the detections
                 detections = yolo_results['labels']
