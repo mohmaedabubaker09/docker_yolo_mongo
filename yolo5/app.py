@@ -116,12 +116,9 @@ def predict():
 
         # Store the Prediction Summary in MongoDB :-
         # TODO store the prediction_summary in MongoDB
-        # mongo_client = MongoClient(mongodb_uri)
-        # mongo_client = MongoClient(mongodb_uri, replicaSet='myReplicaSet' )
-        mongo_client = MongoClient(mongodb_uri)
+        mongo_client = MongoClient(mongodb_uri, replicaSet='myReplicaSet' )
         db = mongo_client['PSDB']
         collection = db['PSCollection']
-        # collection.insert_one(prediction_summary)
 
         result = collection.insert_one(prediction_summary)  # Get the result of the insert operation
         prediction_summary["_id"] = str(result.inserted_id)  # Convert the ObjectId to a string
