@@ -194,7 +194,7 @@ class ObjectDetectionBot(Bot):
     def request_yolo_prediction(self, s3_url):
         # Assuming you have an endpoint where YOLO5 service is running
 
-        yolo_endpoint = 'http://yolo:8081/predict'
+        yolo_endpoint = 'http://yolo5:8081/predict'
         response = requests.post(yolo_endpoint, params={'imgName': s3_url})
 
         if response.status_code == 200:

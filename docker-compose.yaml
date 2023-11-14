@@ -4,6 +4,7 @@ services:
   mongo1:
     image: mongo:5
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo1
+    container_name: mongo1
     volumes:
       - mongo1-data:/data/db
     ports:
@@ -14,6 +15,7 @@ services:
   mongo2:
     image: mongo:5
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo2
+    container_name: mongo2
     volumes:
       - mongo2-data:/data/db
     ports:
@@ -24,6 +26,7 @@ services:
   mongo3:
     image: mongo:5
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo3
+    container_name: mongo3
     volumes:
       - mongo3-data:/data/db
     ports:
@@ -33,6 +36,7 @@ services:
 
   lana_yolo5:
     image: mohamedabubaker09/lana_yolo5:1.0
+    container_name: yolo5
     environment:
       - BUCKET_NAME
       - S3_ACCESS_KEY
@@ -44,6 +48,7 @@ services:
 
   lana_bot:
     image: mohamedabubaker09/lana_bot:1.0
+    container_name: lana_bot
     environment:
       - TELEGRAM_TOKEN
       - TELEGRAM_APP_URL
