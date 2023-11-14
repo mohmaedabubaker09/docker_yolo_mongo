@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  mongo1:
+    image: mongo:5
+    command: mongod --replSet myReplicaSet --bind_ip localhost,mongo1
+    volumes:
+      - mongo1-data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - lanaNetwork
+
+  mongo2:
+    image: mongo:5
+    command: mongod --replSet myReplicaSet --bind_ip localhost,mongo2
+    volumes:
+      - mongo2-data:/data/db
+    ports:
+      - "27018:27017"
+    networks:
+      - lanaNetwork
+
+  mongo3:
+    image: mongo:5
+    command: mongod --replSet myReplicaSet --bind_ip localhost,mongo3
+    volumes:
+      - mongo3-data:/data/db
+    ports:
+      - "27019:27017"
+    networks:
+      - lanaNetwork
+
+  lana_yolo5:
+    image: mohamedabubaker09/lana_yolo5:1.0
+    environment:
+      - BUCKET_NAME
+      - S3_ACCESS_KEY
+      - S3_SECRET_KEY
+    ports:
+      - "8081:8081"
+    networks:
+      - lanaNetwork
+
+  lana_bot:
+    image: mohamedabubaker09/lana_bot:1.0
+    environment:
+      - TELEGRAM_TOKEN
+      - TELEGRAM_APP_URL
+      - BUCKET_NAME
+      - S3_ACCESS_KEY
+      - S3_SECRET_KEY
+      - REGION
+    ports:
+      - "8443:8443"
+    networks:
+      - lanaNetwork
+
+networks:
+  lanaNetwork:
+    driver: bridge
+
+volumes:
+  mongo1-data:
+  mongo2-data:
+  mongo3-data:
