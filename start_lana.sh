@@ -11,7 +11,7 @@ fi
 
 echo "Docker-compose started successfully."
 
-./start_Ngrok.sh
+./run_Ngrok.sh
 if [ $? -ne 0 ]; then
     echo "Failed to execute start_Ngrok.sh. Exiting."
     exit 1

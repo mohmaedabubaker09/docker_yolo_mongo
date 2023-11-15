@@ -1,5 +1,6 @@
 # Use ubuntu as the base image
-FROM ubuntu:jammy-20231004
+# FROM ubuntu:jammy-20231004
+FROM alpine
 #FROM ngrok/ngrok
 
 # Set the working directory in the container
