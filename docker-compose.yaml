@@ -61,6 +61,18 @@ services:
     networks:
       - lanaNetwork
 
+  mongo-init:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mongo-init
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
 networks:
   lanaNetwork:
     driver: bridge
