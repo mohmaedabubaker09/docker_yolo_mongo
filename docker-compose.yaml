@@ -38,9 +38,9 @@ services:
     image: mohamedabubaker09/lana_yolo5:1.0
     container_name: yolo5
     environment:
-      - BUCKET_NAME
-      - S3_ACCESS_KEY
-      - S3_SECRET_KEY
+      - BUCKET_NAME=${BUCKET_NAME}
+      - S3_ACCESS_KEY=${S3_ACCESS_KEY}
+      - S3_SECRET_KEY=${S3_SECRET_KEY}
     ports:
       - "8081:8081"
     networks:
@@ -50,12 +50,12 @@ services:
     image: mohamedabubaker09/lana_bot:1.0
     container_name: lana_bot
     environment:
-      - TELEGRAM_TOKEN
-      - TELEGRAM_APP_URL
-      - BUCKET_NAME
-      - S3_ACCESS_KEY
-      - S3_SECRET_KEY
-      - REGION
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - TELEGRAM_APP_URL=${TELEGRAM_APP_URL}
+      - BUCKET_NAME=${BUCKET_NAME}
+      - S3_ACCESS_KEY=${S3_ACCESS_KEY}
+      - S3_SECRET_KEY=${S3_SECRET_KEY}
+      - REGION=${REGION}
     ports:
       - "8443:8443"
     networks:
