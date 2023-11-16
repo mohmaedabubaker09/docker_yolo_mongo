@@ -35,7 +35,7 @@ services:
       - lanaNetwork
 
   lana_yolo5:
-    image: mohamedabubaker09/lana_yolo5:1.0
+    image: mohamedabubaker09/lana_yolo5:ultralytics-yolov5-latest-cpu
     container_name: yolo5
     environment:
       - BUCKET_NAME=${BUCKET_NAME}
@@ -47,7 +47,7 @@ services:
       - lanaNetwork
 
   lana_bot:
-    image: mohamedabubaker09/lana_bot:1.0
+    image: mohamedabubaker09/lana_bot:ubuntu-jammy-20231004
     container_name: lana_bot
     environment:
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}

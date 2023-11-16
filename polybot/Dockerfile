@@ -1,7 +1,6 @@
 # Use ubuntu as the base image
-# FROM ubuntu:jammy-20231004
-FROM alpine
-#FROM ngrok/ngrok
+FROM ubuntu:jammy-20231004
+# FROM python:3.11.4-slim
 
 # Set the working directory in the container
 WORKDIR /usr/src/app

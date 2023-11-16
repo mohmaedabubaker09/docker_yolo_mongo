@@ -1,0 +1,534 @@
+
+Testing mohamedabubaker09/lana_bot:ubuntu-jammy-20231004...
+
+✗ Low severity vulnerability found in tiff/libtiff5
+  Description: NULL Pointer Dereference
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-TIFF-2799693
+  Introduced through: tiff/libtiff5@4.3.0-6ubuntu0.6, glibc/libc-devtools@2.35-0ubuntu3.4
+  From: tiff/libtiff5@4.3.0-6ubuntu0.6
+  From: glibc/libc-devtools@2.35-0ubuntu3.4 > libgd2/libgd3@2.3.0-2ubuntu2 > tiff/libtiff5@4.3.0-6ubuntu0.6
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in tiff/libtiff5
+  Description: Out-of-bounds Read
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-TIFF-5706844
+  Introduced through: tiff/libtiff5@4.3.0-6ubuntu0.6, glibc/libc-devtools@2.35-0ubuntu3.4
+  From: tiff/libtiff5@4.3.0-6ubuntu0.6
+  From: glibc/libc-devtools@2.35-0ubuntu3.4 > libgd2/libgd3@2.3.0-2ubuntu2 > tiff/libtiff5@4.3.0-6ubuntu0.6
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in tiff/libtiff5
+  Description: Memory Leak
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-TIFF-5775497
+  Introduced through: tiff/libtiff5@4.3.0-6ubuntu0.6, glibc/libc-devtools@2.35-0ubuntu3.4
+  From: tiff/libtiff5@4.3.0-6ubuntu0.6
+  From: glibc/libc-devtools@2.35-0ubuntu3.4 > libgd2/libgd3@2.3.0-2ubuntu2 > tiff/libtiff5@4.3.0-6ubuntu0.6
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in sqlite3/libsqlite3-0
+  Description: CVE-2022-46908
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-SQLITE3-3167716
+  Introduced through: gnupg2/gnupg@2.2.27-3ubuntu2.1, python3-defaults/python3@3.10.6-1~22.04
+  From: gnupg2/gnupg@2.2.27-3ubuntu2.1 > gnupg2/gpg@2.2.27-3ubuntu2.1 > sqlite3/libsqlite3-0@3.37.2-2ubuntu0.1
+  From: python3-defaults/python3@3.10.6-1~22.04 > python3.10@3.10.12-1~22.04.2 > python3.10/libpython3.10-stdlib@3.10.12-1~22.04.2 > sqlite3/libsqlite3-0@3.37.2-2ubuntu0.1
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Arbitrary Code Injection
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-SHADOW-5425688
+  Introduced through: shadow/passwd@1:4.8.1-2ubuntu2.1, adduser@3.118ubuntu5, shadow/login@1:4.8.1-2ubuntu2.1
+  From: shadow/passwd@1:4.8.1-2ubuntu2.1
+  From: adduser@3.118ubuntu5 > shadow/passwd@1:4.8.1-2ubuntu2.1
+  From: shadow/login@1:4.8.1-2ubuntu2.1
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in procps/libprocps8
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-PROCPS-5816665
+  Introduced through: procps/libprocps8@2:3.3.17-6ubuntu2, procps@2:3.3.17-6ubuntu2
+  From: procps/libprocps8@2:3.3.17-6ubuntu2
+  From: procps@2:3.3.17-6ubuntu2 > procps/libprocps8@2:3.3.17-6ubuntu2
+  From: procps@2:3.3.17-6ubuntu2
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+  Fixed in: 2:3.3.17-6ubuntu2.1
+
+✗ Low severity vulnerability found in perl/perl-modules-5.34
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-PERL-5854824
+  Introduced through: perl/perl-modules-5.34@5.34.0-3ubuntu1.2, libalgorithm-diff-xs-perl@0.04-6build3, perl/libperl5.34@5.34.0-3ubuntu1.2, perl@5.34.0-3ubuntu1.2, libalgorithm-merge-perl@0.08-3, libfile-fcntllock-perl@0.22-3build7, perl/perl-base@5.34.0-3ubuntu1.2
+  From: perl/perl-modules-5.34@5.34.0-3ubuntu1.2
+  From: libalgorithm-diff-xs-perl@0.04-6build3 > perl@5.34.0-3ubuntu1.2 > perl/perl-modules-5.34@5.34.0-3ubuntu1.2
+  From: libalgorithm-diff-xs-perl@0.04-6build3 > perl@5.34.0-3ubuntu1.2 > perl/libperl5.34@5.34.0-3ubuntu1.2 > perl/perl-modules-5.34@5.34.0-3ubuntu1.2
+  and 7 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in pcre3/libpcre3
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-PCRE3-2799820
+  Introduced through: pcre3/libpcre3@2:8.39-13ubuntu0.22.04.1, grep@3.7-1build1
+  From: pcre3/libpcre3@2:8.39-13ubuntu0.22.04.1
+  From: grep@3.7-1build1 > pcre3/libpcre3@2:8.39-13ubuntu0.22.04.1
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in patch
+  Description: Release of Invalid Pointer or Reference
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-PATCH-2780071
+  Introduced through: patch@2.7.6-7build2, build-essential@12.9ubuntu3
+  From: patch@2.7.6-7build2
+  From: build-essential@12.9ubuntu3 > dpkg/dpkg-dev@1.21.1ubuntu2.2 > patch@2.7.6-7build2
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in patch
+  Description: Double Free
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-PATCH-2784568
+  Introduced through: patch@2.7.6-7build2, build-essential@12.9ubuntu3
+  From: patch@2.7.6-7build2
+  From: build-essential@12.9ubuntu3 > dpkg/dpkg-dev@1.21.1ubuntu2.2 > patch@2.7.6-7build2
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: Improper Authentication
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-OPENSSL-5776816
+  Introduced through: openssl/libssl3@3.0.2-0ubuntu1.10
+  From: openssl/libssl3@3.0.2-0ubuntu1.10
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+  Fixed in: 3.0.2-0ubuntu1.12
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: Inefficient Regular Expression Complexity
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-OPENSSL-5786277
+  Introduced through: openssl/libssl3@3.0.2-0ubuntu1.10
+  From: openssl/libssl3@3.0.2-0ubuntu1.10
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+  Fixed in: 3.0.2-0ubuntu1.12
+
+✗ Low severity vulnerability found in openssl/libssl3
+  Description: Excessive Iteration
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-OPENSSL-5811825
+  Introduced through: openssl/libssl3@3.0.2-0ubuntu1.10
+  From: openssl/libssl3@3.0.2-0ubuntu1.10
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+  Fixed in: 3.0.2-0ubuntu1.12
+
+✗ Low severity vulnerability found in openldap/libldap-2.5-0
+  Description: NULL Pointer Dereference
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-OPENLDAP-5661784
+  Introduced through: openldap/libldap-2.5-0@2.5.16+dfsg-0ubuntu0.22.04.1, gnupg2/dirmngr@2.2.27-3ubuntu2.1, openldap/libldap-common@2.5.16+dfsg-0ubuntu0.22.04.1
+  From: openldap/libldap-2.5-0@2.5.16+dfsg-0ubuntu0.22.04.1
+  From: gnupg2/dirmngr@2.2.27-3ubuntu2.1 > openldap/libldap-2.5-0@2.5.16+dfsg-0ubuntu0.22.04.1
+  From: openldap/libldap-common@2.5.16+dfsg-0ubuntu0.22.04.1
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in libzstd/libzstd1
+  Description: Resource Exhaustion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-LIBZSTD-3368800
+  Introduced through: libzstd/libzstd1@1.4.8+dfsg-3build1
+  From: libzstd/libzstd1@1.4.8+dfsg-3build1
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in libpng1.6/libpng16-16
+  Description: NULL Pointer Dereference
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-LIBPNG16-3124883
+  Introduced through: libpng1.6/libpng16-16@1.6.37-3build5, glibc/libc-devtools@2.35-0ubuntu3.4
+  From: libpng1.6/libpng16-16@1.6.37-3build5
+  From: glibc/libc-devtools@2.35-0ubuntu3.4 > libgd2/libgd3@2.3.0-2ubuntu2 > libpng1.6/libpng16-16@1.6.37-3build5
+  From: glibc/libc-devtools@2.35-0ubuntu3.4 > libgd2/libgd3@2.3.0-2ubuntu2 > fontconfig/libfontconfig1@2.13.1-4.2ubuntu5 > freetype/libfreetype6@2.11.1+dfsg-1ubuntu0.2 > libpng1.6/libpng16-16@1.6.37-3build5
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in libgd2/libgd3
+  Description: Out-of-bounds Read
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-LIBGD2-2775982
+  Introduced through: libgd2/libgd3@2.3.0-2ubuntu2, glibc/libc-devtools@2.35-0ubuntu3.4
+  From: libgd2/libgd3@2.3.0-2ubuntu2
+  From: glibc/libc-devtools@2.35-0ubuntu3.4 > libgd2/libgd3@2.3.0-2ubuntu2
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in krb5/libgssapi-krb5-2
+  Description: Integer Overflow or Wraparound
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-KRB5-2797765
+  Introduced through: krb5/libgssapi-krb5-2@1.19.2-2ubuntu0.2, krb5/libk5crypto3@1.19.2-2ubuntu0.2, krb5/libkrb5-3@1.19.2-2ubuntu0.2, krb5/libkrb5support0@1.19.2-2ubuntu0.2
+  From: krb5/libgssapi-krb5-2@1.19.2-2ubuntu0.2
+  From: krb5/libk5crypto3@1.19.2-2ubuntu0.2
+  From: krb5/libkrb5-3@1.19.2-2ubuntu0.2
+  and 1 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in gnupg2/gpgv
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GNUPG2-3035409
+  Introduced through: gnupg2/gpgv@2.2.27-3ubuntu2.1, apt@2.4.10, gnupg2/gnupg@2.2.27-3ubuntu2.1, gnupg2/gpgconf@2.2.27-3ubuntu2.1, gnupg2/dirmngr@2.2.27-3ubuntu2.1, gnupg2/gnupg-l10n@2.2.27-3ubuntu2.1, gnupg2/gnupg-utils@2.2.27-3ubuntu2.1, gnupg2/gpg@2.2.27-3ubuntu2.1, gnupg2/gpg-agent@2.2.27-3ubuntu2.1, gnupg2/gpg-wks-client@2.2.27-3ubuntu2.1, gnupg2/gpg-wks-server@2.2.27-3ubuntu2.1, gnupg2/gpgsm@2.2.27-3ubuntu2.1
+  From: gnupg2/gpgv@2.2.27-3ubuntu2.1
+  From: apt@2.4.10 > gnupg2/gpgv@2.2.27-3ubuntu2.1
+  From: gnupg2/gnupg@2.2.27-3ubuntu2.1 > gnupg2/gpgv@2.2.27-3ubuntu2.1
+  and 27 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in glibc/libc6-dev
+  Description: Allocation of Resources Without Limits or Throttling
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GLIBC-2801292
+  Introduced through: glibc/libc6-dev@2.35-0ubuntu3.4, expat/libexpat1-dev@2.4.7-1ubuntu0.2, build-essential@12.9ubuntu3, python3-defaults/libpython3-dev@3.10.6-1~22.04, glibc/libc-dev-bin@2.35-0ubuntu3.4, glibc/libc-bin@2.35-0ubuntu3.4, glibc/libc-devtools@2.35-0ubuntu3.4, glibc/libc6@2.35-0ubuntu3.4
+  From: glibc/libc6-dev@2.35-0ubuntu3.4
+  From: expat/libexpat1-dev@2.4.7-1ubuntu0.2 > glibc/libc6-dev@2.35-0ubuntu3.4
+  From: build-essential@12.9ubuntu3 > glibc/libc6-dev@2.35-0ubuntu3.4
+  and 7 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in glibc/libc6-dev
+  Description: Use After Free
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GLIBC-5901434
+  Introduced through: glibc/libc6-dev@2.35-0ubuntu3.4, expat/libexpat1-dev@2.4.7-1ubuntu0.2, build-essential@12.9ubuntu3, python3-defaults/libpython3-dev@3.10.6-1~22.04, glibc/libc-dev-bin@2.35-0ubuntu3.4, glibc/libc-bin@2.35-0ubuntu3.4, glibc/libc-devtools@2.35-0ubuntu3.4, glibc/libc6@2.35-0ubuntu3.4
+  From: glibc/libc6-dev@2.35-0ubuntu3.4
+  From: expat/libexpat1-dev@2.4.7-1ubuntu0.2 > glibc/libc6-dev@2.35-0ubuntu3.4
+  From: build-essential@12.9ubuntu3 > glibc/libc6-dev@2.35-0ubuntu3.4
+  and 7 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in glibc/libc6-dev
+  Description: Use After Free
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GLIBC-5901480
+  Introduced through: glibc/libc6-dev@2.35-0ubuntu3.4, expat/libexpat1-dev@2.4.7-1ubuntu0.2, build-essential@12.9ubuntu3, python3-defaults/libpython3-dev@3.10.6-1~22.04, glibc/libc-dev-bin@2.35-0ubuntu3.4, glibc/libc-bin@2.35-0ubuntu3.4, glibc/libc-devtools@2.35-0ubuntu3.4, glibc/libc6@2.35-0ubuntu3.4
+  From: glibc/libc6-dev@2.35-0ubuntu3.4
+  From: expat/libexpat1-dev@2.4.7-1ubuntu0.2 > glibc/libc6-dev@2.35-0ubuntu3.4
+  From: build-essential@12.9ubuntu3 > glibc/libc6-dev@2.35-0ubuntu3.4
+  and 7 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in gcc-12/libstdc++6
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GCC12-5861847
+  Introduced through: gcc-12/libstdc++6@12.3.0-1ubuntu1~22.04, apt@2.4.10, build-essential@12.9ubuntu3, python3-defaults/python3@3.10.6-1~22.04, gcc-12/libatomic1@12.3.0-1ubuntu1~22.04, gcc-12/libgomp1@12.3.0-1ubuntu1~22.04, gcc-12/libitm1@12.3.0-1ubuntu1~22.04, gcc-12/liblsan0@12.3.0-1ubuntu1~22.04, gcc-12/libquadmath0@12.3.0-1ubuntu1~22.04, gcc-12/libubsan1@12.3.0-1ubuntu1~22.04, gcc-12/libcc1-0@12.3.0-1ubuntu1~22.04, gcc-12/gcc-12-base@12.3.0-1ubuntu1~22.04, gcc-12/libgcc-s1@12.3.0-1ubuntu1~22.04
+  From: gcc-12/libstdc++6@12.3.0-1ubuntu1~22.04
+  From: apt@2.4.10 > gcc-12/libstdc++6@12.3.0-1ubuntu1~22.04
+  From: apt@2.4.10 > apt/libapt-pkg6.0@2.4.10 > gcc-12/libstdc++6@12.3.0-1ubuntu1~22.04
+  and 21 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in gcc-11
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GCC11-2775686
+  Introduced through: gcc-11@11.4.0-1ubuntu1~22.04, build-essential@12.9ubuntu3, gcc-11/gcc-11-base@11.4.0-1ubuntu1~22.04, gcc-11/libgcc-11-dev@11.4.0-1ubuntu1~22.04, gcc-11/libstdc++-11-dev@11.4.0-1ubuntu1~22.04, gcc-11/g++-11@11.4.0-1ubuntu1~22.04, gcc-11/cpp-11@11.4.0-1ubuntu1~22.04, gcc-11/libasan6@11.4.0-1ubuntu1~22.04, gcc-11/libtsan0@11.4.0-1ubuntu1~22.04
+  From: gcc-11@11.4.0-1ubuntu1~22.04
+  From: build-essential@12.9ubuntu3 > gcc-defaults/g++@4:11.2.0-1ubuntu1 > gcc-11@11.4.0-1ubuntu1~22.04
+  From: build-essential@12.9ubuntu3 > gcc-defaults/gcc@4:11.2.0-1ubuntu1 > gcc-11@11.4.0-1ubuntu1~22.04
+  and 23 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in gcc-11
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GCC11-2778097
+  Introduced through: gcc-11@11.4.0-1ubuntu1~22.04, build-essential@12.9ubuntu3, gcc-11/gcc-11-base@11.4.0-1ubuntu1~22.04, gcc-11/libgcc-11-dev@11.4.0-1ubuntu1~22.04, gcc-11/libstdc++-11-dev@11.4.0-1ubuntu1~22.04, gcc-11/g++-11@11.4.0-1ubuntu1~22.04, gcc-11/cpp-11@11.4.0-1ubuntu1~22.04, gcc-11/libasan6@11.4.0-1ubuntu1~22.04, gcc-11/libtsan0@11.4.0-1ubuntu1~22.04
+  From: gcc-11@11.4.0-1ubuntu1~22.04
+  From: build-essential@12.9ubuntu3 > gcc-defaults/g++@4:11.2.0-1ubuntu1 > gcc-11@11.4.0-1ubuntu1~22.04
+  From: build-essential@12.9ubuntu3 > gcc-defaults/gcc@4:11.2.0-1ubuntu1 > gcc-11@11.4.0-1ubuntu1~22.04
+  and 23 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in gcc-11
+  Description: Out-of-Bounds
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GCC11-3016160
+  Introduced through: gcc-11@11.4.0-1ubuntu1~22.04, build-essential@12.9ubuntu3, gcc-11/gcc-11-base@11.4.0-1ubuntu1~22.04, gcc-11/libgcc-11-dev@11.4.0-1ubuntu1~22.04, gcc-11/libstdc++-11-dev@11.4.0-1ubuntu1~22.04, gcc-11/g++-11@11.4.0-1ubuntu1~22.04, gcc-11/cpp-11@11.4.0-1ubuntu1~22.04, gcc-11/libasan6@11.4.0-1ubuntu1~22.04, gcc-11/libtsan0@11.4.0-1ubuntu1~22.04
+  From: gcc-11@11.4.0-1ubuntu1~22.04
+  From: build-essential@12.9ubuntu3 > gcc-defaults/g++@4:11.2.0-1ubuntu1 > gcc-11@11.4.0-1ubuntu1~22.04
+  From: build-essential@12.9ubuntu3 > gcc-defaults/gcc@4:11.2.0-1ubuntu1 > gcc-11@11.4.0-1ubuntu1~22.04
+  and 23 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in coreutils
+  Description: Improper Input Validation
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-COREUTILS-2801226
+  Introduced through: coreutils@8.32-4.1ubuntu1, fontconfig/fontconfig-config@2.13.1-4.2ubuntu5
+  From: coreutils@8.32-4.1ubuntu1
+  From: fontconfig/fontconfig-config@2.13.1-4.2ubuntu5 > ucf@3.0043 > coreutils@8.32-4.1ubuntu1
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in binutils/binutils-common
+  Description: Improper Input Validation
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-2793366
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in binutils/binutils-common
+  Description: Missing Release of Resource after Effective Lifetime
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-2796179
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in binutils/binutils-common
+  Description: Allocation of Resources Without Limits or Throttling
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-2801731
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in binutils/binutils-common
+  Description: NULL Pointer Dereference
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-3160540
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in binutils/binutils-common
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-3227639
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in binutils/binutils-common
+  Description: Allocation of Resources Without Limits or Throttling
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5855067
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Low severity vulnerability found in bash
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BASH-3098342
+  Introduced through: bash@5.1-6ubuntu1
+  From: bash@5.1-6ubuntu1
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in xz-utils
+  Description: CVE-2020-22916
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-XZUTILS-5854647
+  Introduced through: xz-utils@5.2.5-2ubuntu1, build-essential@12.9ubuntu3, xz-utils/liblzma5@5.2.5-2ubuntu1
+  From: xz-utils@5.2.5-2ubuntu1
+  From: build-essential@12.9ubuntu3 > dpkg/dpkg-dev@1.21.1ubuntu2.2 > xz-utils@5.2.5-2ubuntu1
+  From: xz-utils/liblzma5@5.2.5-2ubuntu1
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in python3.10/libpython3.10-stdlib
+  Description: Improper Input Validation
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-PYTHON310-5438716
+  Introduced through: python3-defaults/libpython3-dev@3.10.6-1~22.04, python3-defaults/python3@3.10.6-1~22.04, python3.10/libpython3.10@3.10.12-1~22.04.2, python3-defaults/python3-dev@3.10.6-1~22.04, python3.10/libpython3.10-dev@3.10.12-1~22.04.2, python3.10/python3.10-dev@3.10.12-1~22.04.2
+  From: python3-defaults/libpython3-dev@3.10.6-1~22.04 > python3.10/libpython3.10-dev@3.10.12-1~22.04.2 > python3.10/libpython3.10-stdlib@3.10.12-1~22.04.2
+  From: python3-defaults/python3@3.10.6-1~22.04 > python3-defaults/libpython3-stdlib@3.10.6-1~22.04 > python3.10/libpython3.10-stdlib@3.10.12-1~22.04.2
+  From: python3-defaults/python3@3.10.6-1~22.04 > python3.10@3.10.12-1~22.04.2 > python3.10/libpython3.10-stdlib@3.10.12-1~22.04.2
+  and 15 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in python-pip/python3-pip
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-PYTHONPIP-5597789
+  Introduced through: python-pip/python3-pip@22.0.2+dfsg-1ubuntu0.4
+  From: python-pip/python3-pip@22.0.2+dfsg-1ubuntu0.4
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in openssl/libssl3
+  Description: CVE-2023-5363
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-OPENSSL-6032358
+  Introduced through: openssl/libssl3@3.0.2-0ubuntu1.10
+  From: openssl/libssl3@3.0.2-0ubuntu1.10
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+  Fixed in: 3.0.2-0ubuntu1.12
+
+✗ Medium severity vulnerability found in krb5/libgssapi-krb5-2
+  Description: Access of Uninitialized Pointer
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-KRB5-5838335
+  Introduced through: krb5/libgssapi-krb5-2@1.19.2-2ubuntu0.2, krb5/libk5crypto3@1.19.2-2ubuntu0.2, krb5/libkrb5-3@1.19.2-2ubuntu0.2, krb5/libkrb5support0@1.19.2-2ubuntu0.2
+  From: krb5/libgssapi-krb5-2@1.19.2-2ubuntu0.2
+  From: krb5/libk5crypto3@1.19.2-2ubuntu0.2
+  From: krb5/libkrb5-3@1.19.2-2ubuntu0.2
+  and 1 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+  Fixed in: 1.19.2-2ubuntu0.3
+
+✗ Medium severity vulnerability found in glibc/libc6-dev
+  Description: Memory Leak
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GLIBC-5919741
+  Introduced through: glibc/libc6-dev@2.35-0ubuntu3.4, expat/libexpat1-dev@2.4.7-1ubuntu0.2, build-essential@12.9ubuntu3, python3-defaults/libpython3-dev@3.10.6-1~22.04, glibc/libc-dev-bin@2.35-0ubuntu3.4, glibc/libc-bin@2.35-0ubuntu3.4, glibc/libc-devtools@2.35-0ubuntu3.4, glibc/libc6@2.35-0ubuntu3.4
+  From: glibc/libc6-dev@2.35-0ubuntu3.4
+  From: expat/libexpat1-dev@2.4.7-1ubuntu0.2 > glibc/libc6-dev@2.35-0ubuntu3.4
+  From: build-essential@12.9ubuntu3 > glibc/libc6-dev@2.35-0ubuntu3.4
+  and 7 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in gcc-defaults/cpp
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-GCCDEFAULTS-2779305
+  Introduced through: gcc-defaults/cpp@4:11.2.0-1ubuntu1, build-essential@12.9ubuntu3, gcc-defaults/gcc@4:11.2.0-1ubuntu1, gcc-defaults/g++@4:11.2.0-1ubuntu1
+  From: gcc-defaults/cpp@4:11.2.0-1ubuntu1
+  From: build-essential@12.9ubuntu3 > gcc-defaults/g++@4:11.2.0-1ubuntu1 > gcc-defaults/cpp@4:11.2.0-1ubuntu1
+  From: build-essential@12.9ubuntu3 > gcc-defaults/gcc@4:11.2.0-1ubuntu1 > gcc-defaults/cpp@4:11.2.0-1ubuntu1
+  and 5 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: Memory Leak
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5853807
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: Memory Leak
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5853891
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: NULL Pointer Dereference
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5853915
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: Resource Exhaustion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5854023
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5854125
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: Reachable Assertion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5854227
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: Memory Leak
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5854250
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: Memory Leak
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5854281
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: CVE-2022-47695
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5854401
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5854785
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+✗ Medium severity vulnerability found in binutils/binutils-common
+  Description: Memory Leak
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2204-BINUTILS-5855103
+  Introduced through: binutils/binutils-common@2.38-4ubuntu2.3, binutils@2.38-4ubuntu2.3, binutils/libbinutils@2.38-4ubuntu2.3, binutils/libctf-nobfd0@2.38-4ubuntu2.3, binutils/libctf0@2.38-4ubuntu2.3, binutils/binutils-x86-64-linux-gnu@2.38-4ubuntu2.3, build-essential@12.9ubuntu3
+  From: binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  From: binutils@2.38-4ubuntu2.3 > binutils/libbinutils@2.38-4ubuntu2.3 > binutils/binutils-common@2.38-4ubuntu2.3
+  and 14 more...
+  Image layer: Introduced by your base image (ubuntu:jammy-20231004)
+
+
+
+Organization:      mohamedabubaker09
+Package manager:   deb
+Target file:       Dockerfile
+Project name:      docker-image|mohamedabubaker09/lana_bot
+Docker image:      mohamedabubaker09/lana_bot:ubuntu-jammy-20231004
+Platform:          linux/amd64
+Base image:        ubuntu:jammy-20231004
+Licenses:          enabled
+
+Tested 232 dependencies for known issues, found 52 issues.
+
+Base Image             Vulnerabilities  Severity
+ubuntu:jammy-20231004  20               0 critical, 0 high, 4 medium, 16 low
+
+Recommendations for base image upgrade:
+
+Major upgrades
+Base Image              Vulnerabilities  Severity
+ubuntu:mantic-20231011  8                0 critical, 0 high, 2 medium, 6 low
+
+
+Pro tip: use `--exclude-base-image-vulns` to exclude from display Docker base image vulnerabilities.
+
+Snyk found some vulnerabilities in your image applications (Snyk searches for these vulnerabilities by default). See https://snyk.co/app-vulns for more information.
+
+To remove these messages in the future, please run `snyk config set disableSuggestions=true`
+
+Learn more: https://docs.snyk.io/products/snyk-container/getting-around-the-snyk-container-ui/base-image-detection
+
+-------------------------------------------------------
+
+Testing mohamedabubaker09/lana_bot:ubuntu-jammy-20231004...
+
+Organization:      mohamedabubaker09
+Package manager:   pip
+Target file:       /usr/src/app/requirements.txt
+Project name:      /usr/src/app/requirements.txt
+Docker image:      mohamedabubaker09/lana_bot:ubuntu-jammy-20231004
+Licenses:          enabled
+
+✔ Tested 28 dependencies for known issues, no vulnerable paths found.
+
+
+Tested 2 projects, 1 contained vulnerable paths.
+
+
+
