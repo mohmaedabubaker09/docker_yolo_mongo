@@ -199,7 +199,6 @@ class ObjectDetectionBot(Bot):
 
     def download_predicted_image_from_s3(self, file_name):
         s3_file_name = file_name.split('.')[0] + '_prediction.jpg'
-        print (s3_file_name)
         try:
             self.s3_resource.Bucket(self.Bucket_Name).download_file(
                 s3_file_name,
