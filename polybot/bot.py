@@ -7,6 +7,7 @@ import boto3
 import requests
 import json
 import botocore
+from openai import OpenAI
 
 class Bot:
 
@@ -79,8 +80,6 @@ class QuoteBot(Bot):
         elif msg["text"] != 'Please don\'t quote me':
             self.send_text_with_quote(msg['chat']['id'], msg["text"], quoted_msg_id=msg["message_id"])
 
-
-
 class ObjectDetectionBot(Bot):
 
     # TODO download the user photo (utilize download_user_photo)
@@ -90,6 +89,11 @@ class ObjectDetectionBot(Bot):
 
     def __init__(self, token, telegram_chat_url):
         Bot.__init__(self, token, telegram_chat_url)
+
+        # self.OpenAI_Key = os.OPENAI_API_KEY
+        # self.chat_gpt_client = OpenAI(api_key=os.environ['OPENAI_API_KEY'],)
+        self.chat_gpt_client = OpenAI()
+
         self.Bucket_Name = os.environ['BUCKET_NAME']
         self.aws_region = os.environ['REGION']
         # self.s3_client = boto3.client('s3', aws_access_key_id=self.s3_access_key, aws_secret_access_key=self.s3_secret_key)
@@ -101,9 +105,28 @@ class ObjectDetectionBot(Bot):
         )
 
     def handle_message(self, msg):
-        logger.info(f'Incoming message: {msg}')
+        # self.send_text(msg['chat']['id'], "Hello, talk to me habibi")
+        if not (self.is_current_msg_photo(msg)):
+            completion = self.chat_gpt_client.chat.completions.create(
+                model="gpt-4-1106-preview",
+                messages=[
+                    {"role": "system",
+                     "content": "You are a precise, swift, funny, friendly, and to the point assistant. You use emojies. Your name is LanaScoop."},
+                    {"role": "user", "content": msg["text"] }
+                ]
+            )
+            # Extract just the content of the message
+            response_content = completion.choices[0].message.content if completion.choices[0].message else None
 
-        if self.is_current_msg_photo(msg):
+            if response_content:
+                # Format the content for readability
+                formatted_response = response_content.strip()
+                self.send_text(msg['chat']['id'], formatted_response)
+            else:
+                # Handle cases where the content is None or empty
+                error_message = "Sorry, I couldn't generate a response. Please try again."
+                self.send_text(msg['chat']['id'], error_message)
+        else:
             try:
                 self.send_text(msg['chat']['id'], "Photo received! 🌟 We're swiftly scanning it... Stay tuned for the magic! ✨")
 
