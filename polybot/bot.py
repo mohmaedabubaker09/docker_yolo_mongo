@@ -8,6 +8,8 @@ import requests
 import json
 import botocore
 from openai import OpenAI
+from io import BytesIO
+from PIL import Image
 
 class Bot:
 
@@ -89,10 +91,8 @@ class ObjectDetectionBot(Bot):
 
     def __init__(self, token, telegram_chat_url):
         Bot.__init__(self, token, telegram_chat_url)
-
-        # self.OpenAI_Key = os.OPENAI_API_KEY
-        # self.chat_gpt_client = OpenAI(api_key=os.environ['OPENAI_API_KEY'],)
         self.chat_gpt_client = OpenAI()
+        # self.chat_gpt_client = OpenAI(api_key=os.environ['OPENAI_API_KEY'],)
 
         self.Bucket_Name = os.environ['BUCKET_NAME']
         self.aws_region = os.environ['REGION']
@@ -103,6 +103,28 @@ class ObjectDetectionBot(Bot):
             aws_access_key_id=os.environ['S3_ACCESS_KEY'],
             aws_secret_access_key=os.environ['S3_SECRET_KEY']
         )
+
+    def dalle_generate_image(self, prompt):
+        try:
+            response = self.chat_gpt_client.images.generate(
+                model="dall-e-3",
+                prompt=f"{prompt}",
+                size="1024x1024",
+                quality="standard",
+                n=1,
+            )
+            return response.data[0].url
+        except Exception as e:
+            print(f"An error occurred while generating image in DALL-E: {e}")
+
+    def save_dalle_image(self, image_url, file_path):
+        try:
+            response = requests.get(image_url)
+            image = Image.open(BytesIO(response.content))
+            image.save(file_path)
+            print(f"Image saved to {file_path}")
+        except Exception as e:
+            print(f"Failed to save image: {e}")
 
     def handle_message(self, msg):
         # self.send_text(msg['chat']['id'], "Hello, talk to me habibi")
@@ -179,8 +201,17 @@ class ObjectDetectionBot(Bot):
                 file_name = os.path.basename(img_path)
                 new_filename = self.download_predicted_image_from_s3(file_name)
                 self.send_photo(msg['chat']['id'], new_filename)
+                self.send_text(msg['chat']['id'], "Exciting news! 🌟 A special gift 🎁 is on its way to you. Just a little more patience, and it'll be yours. It's worth the wait! 😊")
+                prompt = summary
+                image_url = self.dalle_generate_image(prompt)
 
-                # self.send_photo(msg['chat']['id'], new_filename)
+                if image_url:
+                    print("Image generated successfully.")
+                    self.save_dalle_image(image_url, "generated_image.jpg")
+                else:
+                    print("Failed to generate image.")
+
+                self.send_photo(msg['chat']['id'], "generated_image.jpg")
             except Exception as e:
                 logger.error(e)
 
@@ -223,3 +254,5 @@ class ObjectDetectionBot(Bot):
             return response.json()
         else:
             response.raise_for_status()
+
+
