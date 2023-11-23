@@ -14,7 +14,6 @@ RUN pip install --upgrade pip
 
 COPY requirements.txt .
 
-# RUN pip install -r requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 ## Download and install ngrok
@@ -24,7 +23,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 #   tee /etc/apt/sources.list.d/ngrok.list && \
 #   apt update && apt install ngrok
 
-# Copy the rest of your application's source code
 COPY . .
 
 CMD ["python3", "app.py"]
