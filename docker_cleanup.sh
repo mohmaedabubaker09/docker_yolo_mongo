@@ -10,7 +10,7 @@ echo "Deleting all Docker images..."
 docker rmi $(docker images -q) -f
 
 echo "Deleting specific Docker networks..."
-docker network rm docker_yolo_mongo_lanaNetwork docker_yolo_mongo_default
+docker network rm docker_yolo_mongo_lanaNetwork docker_yolo_mongo_default lanaNetwork
 
 echo "Listing all Docker containers (including exited ones)..."
 docker ps -a

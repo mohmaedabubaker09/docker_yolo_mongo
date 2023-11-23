@@ -2,7 +2,6 @@
 FROM ubuntu:jammy-20231004
 #FROM ngrok/ngrok
 
-# Set the working directory in the container
 # WORKDIR /usr/src/app
 
 # Install dependencies
@@ -19,8 +18,7 @@ RUN curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
    tee /etc/apt/sources.list.d/ngrok.list && \
    apt update && apt install ngrok
 
-# Set an environment variable for the ngrok token
-# This assumes you will pass NGROK_TOKEN as a build argument
+
 ARG NGROK_TOKEN
 RUN ngrok config add-authtoken ${NGROK_TOKEN}
 #RUN ngrok http 8443 --domain rapidly-rational-squirrel.ngrok-free.app

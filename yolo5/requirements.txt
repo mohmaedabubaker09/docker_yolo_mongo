@@ -10,8 +10,8 @@ uuid
 pyyaml
 pymongo
 
-# opencv-python==4.8.1.78
+opencv-python==4.8.1.78
 
 # testing
-pylint
-pytest
+# pylint
+# pytest

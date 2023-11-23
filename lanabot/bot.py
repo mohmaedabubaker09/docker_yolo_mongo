@@ -14,8 +14,7 @@ from PIL import Image
 class Bot:
 
     def __init__(self, token, telegram_chat_url):
-        # create a new instance of the TeleBot class.
-        # all communication with Telegram servers are done using self.telegram_bot_client
+
         self.telegram_bot_client = telebot.TeleBot(token)
 
         # remove any existing webhooks configured in Telegram servers
@@ -71,7 +70,6 @@ class Bot:
         """Bot Main message handler"""
         # logger.info(f'Incoming message: {msg}')
         self.send_text(msg['chat']['id'], f'Your original message: {msg["text"]}')
-
 
 # class QuoteBot(Bot):
 #     def handle_message(self, msg):
@@ -155,10 +153,8 @@ class ObjectDetectionBot(Bot):
                 # Download the photo from telegram bot chat
                 img_path = self.download_user_photo(msg)
 
-                # Upload the photo to S3
                 s3_url = self.upload_image_to_s3(img_path)
 
-                # Send a request to yolo5 service for prediction
                 yolo_results = self.request_yolo_prediction(s3_url)
 
                 if len(yolo_results) == 1:
@@ -166,13 +162,12 @@ class ObjectDetectionBot(Bot):
                         self.send_text(msg['chat']['id'], "Oops, your image has left me scratching my circuits! I must've missed a few updates. 😅 Could you send a different image, so I can try again?")
                         return
 
-                 # Extract the 'labels' list which contains the detections
+                # Extract the 'labels' list which contains the detections
                 detections = yolo_results['labels']
 
                 # Create a dictionary to count occurrences of each class
                 detection_counts = {}
 
-                # Collect data for each detected object
                 for item in detections:
                     class_name = item['class']
                     # Initialize the count for this class if not already done
@@ -195,7 +190,6 @@ class ObjectDetectionBot(Bot):
                 # Combine sentences into a summary paragraph
                 summary = ''.join(detection_descriptions)
 
-                # Send results to the telegram user
                 self.send_text(msg['chat']['id'], f"We've scanned your image and here's what we found:\n{summary}")
                 self.send_text(msg['chat']['id'],"One more surprise 🌟 Please wait ...")
                 file_name = os.path.basename(img_path)
@@ -254,5 +248,3 @@ class ObjectDetectionBot(Bot):
             return response.json()
         else:
             response.raise_for_status()
-
-

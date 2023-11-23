@@ -19,7 +19,6 @@ s3_secret_key = os.environ['S3_SECRET_KEY']
 # mongodb_uri = 'mongodb://localhost:27017,localhost:27018,localhost:27019/' # os.environ['MONGODB_URI']
 mongodb_uri = 'mongodb://mongo1:27017,mongo2:27018,mongo3:27019/'
 
-# intialize S3 client
 s3_client = boto3.client('s3', aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_key)
 
 # Load Configuration from a YAML File :-
@@ -36,7 +35,6 @@ def predict():
     # Generates a UUID for this current prediction HTTP request. This id can be used as a reference in logs to identify and track individual prediction requests.
     prediction_id = str(uuid.uuid4())
 
-    # Log Information About the Prediction :-
     logger.info(f'prediction: {prediction_id}. start processing')
 
     # Receive Image Information from the Request :-
@@ -57,7 +55,6 @@ def predict():
             logger.error(e)
             raise
 
-    # Log Information About the Prediction :-
     logger.info(f'prediction: {prediction_id}/{original_img_path}. Download img completed')
 
     # Run the Object Detection on the Image :-
@@ -70,15 +67,14 @@ def predict():
         name=prediction_id,
         save_txt=True
     )
-    # Log Completion of the Prediction Process :-
     logger.info(f'prediction: {prediction_id}/{original_img_path}. done')
 
     # This is the path for the predicted image with labels :-
     # The predicted image typically includes bounding boxes drawn around the detected objects, along with class labels and possibly confidence scores.
     predicted_img_path = Path(f'static/data/{prediction_id}/{original_img_path}')
 
-    # Uplode Predicted image to S3 :-
     # TODO Uploads the predicted image (predicted_img_path) to S3 (be careful not to override the original image). - Done!
+    # Uplode Predicted image to S3 :-
     # s3_prediction_img_path = f'predictions/{img_name.split(".")[0]}_prediction.jpg'
     s3_prediction_img_path = f'{img_name.split(".")[0]}_prediction.jpg'
     try:
@@ -115,7 +111,7 @@ def predict():
 
         # Store the Prediction Summary in MongoDB :-
         # TODO store the prediction_summary in MongoDB - Done!
-        mongo_client = MongoClient(mongodb_uri, replicaSet='lanaReplicaSet' )
+        mongo_client = MongoClient(mongodb_uri, replicaSet='myReplicaSet' )
         db = mongo_client['PSDB']
         collection = db['PSCollection']
 
@@ -123,7 +119,8 @@ def predict():
         prediction_summary["_id"] = str(result.inserted_id)  # Convert the ObjectId to a string
 
         mongo_client.close()
-        #  Return the Prediction Summary as a Response :-
+
+        #  Returns the Prediction Summary as a Response :-
         return prediction_summary
     else:
         # return f'prediction: {prediction_id}/{original_img_path}. prediction result not found', 404
