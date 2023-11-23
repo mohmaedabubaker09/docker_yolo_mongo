@@ -25,14 +25,14 @@ class Bot:
         # set the webhook URL
         self.telegram_bot_client.set_webhook(url=f'{telegram_chat_url}/{token}/', timeout=60)
 
-        logger.info(f'Telegram Bot information\n\n{self.telegram_bot_client.get_me()}')
+        # logger.info(f'Telegram Bot information\n\n{self.telegram_bot_client.get_me()}')
 
 
     def send_text(self, chat_id, text):
         self.telegram_bot_client.send_message(chat_id, text)
 
-    def send_text_with_quote(self, chat_id, text, quoted_msg_id):
-        self.telegram_bot_client.send_message(chat_id, text, reply_to_message_id=quoted_msg_id)
+    # def send_text_with_quote(self, chat_id, text, quoted_msg_id):
+    #     self.telegram_bot_client.send_message(chat_id, text, reply_to_message_id=quoted_msg_id)
 
     def is_current_msg_photo(self, msg):
         return 'photo' in msg
@@ -69,25 +69,25 @@ class Bot:
 
     def handle_message(self, msg):
         """Bot Main message handler"""
-        logger.info(f'Incoming message: {msg}')
+        # logger.info(f'Incoming message: {msg}')
         self.send_text(msg['chat']['id'], f'Your original message: {msg["text"]}')
 
 
-class QuoteBot(Bot):
-    def handle_message(self, msg):
-        logger.info(f'Incoming message: {msg}')
-
-        if msg["text"] == 'How are you':
-            self.send_text(msg['chat']['id'], "Fine Thank You!")
-        elif msg["text"] != 'Please don\'t quote me':
-            self.send_text_with_quote(msg['chat']['id'], msg["text"], quoted_msg_id=msg["message_id"])
+# class QuoteBot(Bot):
+#     def handle_message(self, msg):
+#         logger.info(f'Incoming message: {msg}')
+#
+#         if msg["text"] == 'How are you':
+#             self.send_text(msg['chat']['id'], "Fine Thank You!")
+#         elif msg["text"] != 'Please don\'t quote me':
+#             self.send_text_with_quote(msg['chat']['id'], msg["text"], quoted_msg_id=msg["message_id"])
 
 class ObjectDetectionBot(Bot):
 
-    # TODO download the user photo (utilize download_user_photo)
-    # TODO upload the photo to S3
-    # TODO send a request to the `yolo5` service for prediction
-    # TODO send results to the Telegram end-user
+    # TODO download the user photo (utilize download_user_photo) - Done!
+    # TODO upload the photo to S3 - Done!
+    # TODO send a request to the `yolo5` service for prediction - Done!
+    # TODO send results to the Telegram end-user - Done!
 
     def __init__(self, token, telegram_chat_url):
         Bot.__init__(self, token, telegram_chat_url)

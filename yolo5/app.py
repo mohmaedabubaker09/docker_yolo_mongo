@@ -45,7 +45,7 @@ def predict():
 
     # Download the Image from S3 :-
     # TODO download img_name from S3, store the local image path in original_img_path
-    #  The bucket name should be provided as an env var BUCKET_NAME.
+    #  The bucket name should be provided as an env var BUCKET_NAME. _ Done!
     # original_img_path = f'/tmp/{img_name}'
     original_img_path = f'{img_name}'
     try:
@@ -78,7 +78,7 @@ def predict():
     predicted_img_path = Path(f'static/data/{prediction_id}/{original_img_path}')
 
     # Uplode Predicted image to S3 :-
-    # TODO Uploads the predicted image (predicted_img_path) to S3 (be careful not to override the original image).
+    # TODO Uploads the predicted image (predicted_img_path) to S3 (be careful not to override the original image). - Done!
     # s3_prediction_img_path = f'predictions/{img_name.split(".")[0]}_prediction.jpg'
     s3_prediction_img_path = f'{img_name.split(".")[0]}_prediction.jpg'
     try:
@@ -87,7 +87,6 @@ def predict():
         logger.error(e)
         raise
         return
-
 
     # Parse prediction labels and create a summary :-
     pred_summary_path = Path(f'static/data/{prediction_id}/labels/{original_img_path.split(".")[0]}.txt')
@@ -115,8 +114,8 @@ def predict():
         }
 
         # Store the Prediction Summary in MongoDB :-
-        # TODO store the prediction_summary in MongoDB
-        mongo_client = MongoClient(mongodb_uri, replicaSet='myReplicaSet' )
+        # TODO store the prediction_summary in MongoDB - Done!
+        mongo_client = MongoClient(mongodb_uri, replicaSet='lanaReplicaSet' )
         db = mongo_client['PSDB']
         collection = db['PSCollection']
 

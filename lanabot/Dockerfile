@@ -20,7 +20,8 @@ RUN pip install --upgrade pip
 COPY requirements.txt .
 
 # Install Python dependencies from requirements.txt
-RUN pip install -r requirements.txt
+# RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 ## Download and install ngrok
 #RUN curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
