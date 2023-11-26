@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Lana Bot is an innovative project that combines modern DevOps practices with cutting-edge technologies. It leverages Docker, Python, APIs, and MongoDB to create a dynamic, multi-container Docker application. Each container in this system plays a unique role, working together to process and respond to data in real-time using AI and machine learning.
+Lana Bot is a project that combines modern DevOps practices. It leverages Docker, Python, APIs, and MongoDB to create a dynamic, multi-container Docker application. Each container in this system plays a unique role, working together to process and respond to data in real-time using AI and machine learning.
 
 ## Architecture
 
@@ -21,15 +21,14 @@ The bot is powered by Python scripts, with `app.py` managing HTTP requests and T
 Key DevOps practices integrated into the project:
 
 - **Docker Containerization:** Provides consistency, simplifies deployment, and isolates dependencies.
-- **CI/CD:** Enables automated testing and deployment.
 - **GitHub Version Control:** Facilitates collaborative development and effective change management.
 - **Monitoring and Security:** Utilizes Snyk for vulnerability scanning and NGROK for secure tunneling.
 
 ## Challenges and Solutions
 
-The project addressed challenges in container communication and data consistency through Docker networks and MongoDB's replica set, ensuring seamless operation and data integrity.
+To be added soon.
 
 ## Conclusion
 
-Lana Bot is a testament to the practical application of DevOps, AI, and cloud services in software development. It showcases the effectiveness of Docker and Python in real-time data processing, emphasizing agility, scalability, and robustness.
+Lana Bot is a testament to the practical application of DevOps and AI services in software development. It showcases the effectiveness of Docker and Python in real-time data processing, emphasizing agility, scalability, and robustness.
 
