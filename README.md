@@ -60,7 +60,9 @@ Key DevOps practices integrated into the project:
 
 ## Challenges and Solutions
 
-To be added soon.
+- **Improving Response Time:** We are looking to enhance the speed at which Lana Bot responds to Telegram messages, aiming for quicker interactions.
+- **Message Response Synchronization:** Future updates will focus on ensuring that responses to messages are synchronized to provide a seamless conversational experience.
+- **Context Retention:** A known issue with Lana Bot is its difficulty in maintaining conversation context through the OpenAI API. We plan to resolve this by refining the context management in the `bot.py` script.
 
 ## Conclusion
 
