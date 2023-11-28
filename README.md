@@ -21,7 +21,6 @@ The bot is powered by Python scripts, with `app.py` managing HTTP requests. The 
 Key DevOps practices integrated into the project:
 
 - **Docker Containerization:** Provides consistency, simplifies deployment, and isolates dependencies.
-- **CI/CD:** Enables automated testing and deployment.
 - **GitHub Version Control:** Facilitates collaborative development and effective change management.
 - **Monitoring and Security:** Utilizes Snyk for vulnerability scanning and NGROK for secure tunneling.
 
